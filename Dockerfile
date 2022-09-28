@@ -1,2 +1,6 @@
-FROM tomcat:8
-COPY target/*.war /usr/local/tomcat/webapps/
+FROM node:latest
+WORKDIR /app
+ADD . /app
+RUN npm install
+EXPOSE 3000
+CMD npm start
